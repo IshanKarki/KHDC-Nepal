@@ -1,3 +1,16 @@
+    :root {
+      --paper: #F4F5F1;
+      --paper-2: #EBEDE6;
+      --ink: #16241F;
+      --ink-soft: #425049;
+      --pine: #0F5C4F;
+      --pine-deep: #0A3D34;
+      --marigold: #E1A339;
+      --vital: #C1432E;
+      --line: #D3D6CC;
+      --white: #FFFFFF;
+    } -->
+    
     * {
       box-sizing: border-box;
       margin: 0;
