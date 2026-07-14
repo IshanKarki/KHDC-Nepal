@@ -5,147 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Gallery</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: max-content;
-            margin: 0 auto;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .synopsis {
-            font-size: 1.1em;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.95;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 16px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            background: white;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            aspect-ratio: 1;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            padding: 20px 15px;
-            color: white;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-item-overlay {
-            opacity: 1;
-        }
-
-        .gallery-item-title {
-            font-size: 0.95em;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .gallery-item-date {
-            font-size: 0.8em;
-            opacity: 0.9;
-        }
-
-        .controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 10px 25px;
-            border: 2px solid white;
-            background: transparent;
-            color: white;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .btn:hover {
-            background: white;
-            color: #667eea;
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 10px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -159,56 +18,56 @@
 
         <div class="gallery">
             <div class="gallery-item">
-                <img src="1.jpg" alt="Beautiful Sunset">
+                <img src="images/1.jpg" alt="Beautiful Sunset">
                 <div class="gallery-item-overlay">
                     <div class="gallery-item-date">Jan 15, 2024</div>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="2.jpg" alt="Mountain Adventure">
+                <img src="images/2.jpg" alt="Mountain Adventure">
                 <div class="gallery-item-overlay">
                     <div class="gallery-item-date">Feb 03, 2024</div>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="3.jpg" alt="Family Time">
+                <img src="images/3.jpg" alt="Family Time">
                 <div class="gallery-item-overlay">
                     <div class="gallery-item-date">Feb 14, 2024</div>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="4.png" alt="Night Lights">
+                <img src="images/4.png" alt="Night Lights">
                 <div class="gallery-item-overlay">
                     <div class="gallery-item-date">Feb 20, 2024</div>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="5.png" alt="Beach Days">
+                <img src="images/5.png" alt="Beach Days">
                 <div class="gallery-item-overlay">
                     <div class="gallery-item-date">Mar 05, 2024</div>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="6.png" alt="Ocean Waves">
+                <img src="images/6.png" alt="Ocean Waves">
                 <div class="gallery-item-overlay">
                     <div class="gallery-item-date">Mar 12, 2024</div>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="7.png" alt="City Exploration">
+                <img src="images/7.png" alt="City Exploration">
                 <div class="gallery-item-overlay">
                     <div class="gallery-item-date">Mar 18, 2024</div>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="8.jpg" alt="Forest Walk">
+                <img src="images/8.jpg" alt="Forest Walk">
                 <div class="gallery-item-overlay">
                     <div class="gallery-item-date">Mar 25, 2024</div>
                 </div>
