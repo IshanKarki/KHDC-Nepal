@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate — KHDC Nepal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="donate.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="wrap">
+            <div class="brand">KHDC Nepal</div>
+            <a href="index.html" class="back">← Back to site</a>
+        </nav>
+    </header>
+
+    <section class="hero wrap">
+        <div class="eyebrow" style="justify-content:center;">Support the program</div>
+        <h1>Fund the screening that catches it early.</h1>
+        <p>Every contribution goes directly toward community NCD screening, health worker training, and awareness
+            campaigns in Dharan and beyond.</p>
+    </section>
+
+    <div class="wrap">
+        <div class="panel">
+
+            <form id="donateForm">
+
+                <!-- <div class="freq-toggle" role="tablist">
+                    <button type="button" class="active" data-freq="once">One-time</button>
+                    <button type="button" data-freq="monthly">Monthly</button>
+                </div> -->
+                <div>
+                    <h2 style="font-weight: bolder;">Donate Us</h2>
+                </div>
+
+                <label>Select an amount (NPR)</label>
+                <div class="amounts" id="amountGrid">
+                    <div class="amt-btn active" data-amt="500"><span class="cur">Rs</span>500</div>
+                    <div class="amt-btn" data-amt="1500"><span class="cur">Rs</span>1,500</div>
+                    <div class="amt-btn" data-amt="3000"><span class="cur">Rs</span>3,000</div>
+                    <div class="amt-btn" data-amt="5000"><span class="cur">Rs</span>5,000</div>
+                </div>
+
+                <label>Or enter a custom amount</label>
+                <div class="custom-amt">
+                    <span>Rs</span>
+                    <input type="text" id="customAmt" placeholder="e.g. 2000" inputmode="numeric">
+                </div>
+
+                <div class="field-grid">
+                    <div>
+                        <label for="fname">Full name</label>
+                        <input type="text" id="fname" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                </div>
+                <div class="field-grid">
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div>
+                        <label for="pan">PAN (for tax receipt, optional)</label>
+                        <input type="text" id="pan">
+                    </div>
+                </div>
+
+                <label>Payment method</label>
+                <div class="pay-methods" id="payGrid">
+                    <div class="pay-opt active" data-pay="esewa">eSewa</div>
+                    <div class="pay-opt" data-pay="khalti">Khalti</div>
+                    <div class="pay-opt" data-pay="bank">Bank Transfer</div>
+                    <div class="pay-opt" data-pay="card">Card</div>
+                </div>
+
+                <button type="submit" class="submit-btn">Donate Rs <span id="btnAmt">500</span></button>
+                <p class="note">By donating you agree to receive an email receipt. Questions? Reach us at <a
+                        href="mailto:contact@khdcnepal.org">contact@khdcnepal.org</a></p>
+            </form>
+
+            <div class="thankyou" id="thankYou">
+                <div class="mark">✓</div>
+                <h2>Thank you for your support.</h2>
+                <p>A confirmation has been noted — our team will follow up with payment instructions and a receipt by
+                    email.</p>
+            </div>
+
+            <div class="trust-row">
+                <div><b>130,000+</b>People reached</div>
+                <div><b>2003</b>Program founded</div>
+                <div><b>100%</b>Goes to community programs</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>© 2026 KHDC Nepal · Dharan-11, Sunsari, Nepal</footer>
+
+    <script>
+        let selectedAmount = 500;
+        const amountGrid = document.getElementById('amountGrid');
+        const customAmt = document.getElementById('customAmt');
+        const btnAmt = document.getElementById('btnAmt');
+        const payGrid = document.getElementById('payGrid');
+
+        amountGrid.addEventListener('click', (e) => {
+            const btn = e.target.closest('.amt-btn');
+            if (!btn) return;
+            document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            selectedAmount = parseInt(btn.dataset.amt);
+            customAmt.value = '';
+            btnAmt.textContent = selectedAmount.toLocaleString();
+        });
+
+        customAmt.addEventListener('input', () => {
+            document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('active'));
+            const val = parseInt(customAmt.value) || 0;
+            selectedAmount = val;
+            btnAmt.textContent = val.toLocaleString();
+        });
+
+        payGrid.addEventListener('click', (e) => {
+            const opt = e.target.closest('.pay-opt');
+            if (!opt) return;
+            document.querySelectorAll('.pay-opt').forEach(o => o.classList.remove('active'));
+            opt.classList.add('active');
+        });
+
+        document.querySelectorAll('.freq-toggle button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.freq-toggle button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        document.getElementById('donateForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // NOTE: this is a front-end-only demo. Wire this up to your real payment
+            // gateway (eSewa/Khalti merchant API, bank transfer instructions, or a
+            // card processor) via your app backend, e.g. POST to
+            // https://api.khdcnepal.org/donate once that endpoint exists.
+            document.getElementById('donateForm').style.display = 'none';
+            document.getElementById('thankYou').classList.add('show');
+        });
+    </script>
+
+</body>
+
+</html>
