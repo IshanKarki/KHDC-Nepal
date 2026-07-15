@@ -9,9 +9,9 @@
       --vital: #C1432E;
       --line: #D3D6CC;
       --white: #FFFFFF;
-    } -->
-    
-    * {
+    }
+
+    -->* {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -602,10 +602,14 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      text-decoration: monospace;
       color: white;
       font-size: 12px;
       justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--marigold);
     }
 
     /* reduced motion */
