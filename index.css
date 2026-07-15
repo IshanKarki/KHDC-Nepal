@@ -605,11 +605,14 @@
       color: white;
       font-size: 12px;
       justify-content: center;
+    }
+
+    .foot-creator a {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
+      font-size: 14px;
+      /* letter-spacing: .08em; */
       color: var(--marigold);
+      font-weight: 500;
     }
 
     /* reduced motion */
