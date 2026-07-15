@@ -605,6 +605,7 @@
       text-decoration: monospace;
       color: white;
       font-size: 12px;
+      justify-content: center;
     }
 
     /* reduced motion */
