@@ -13,21 +13,9 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="index.css">
-
-  <!-- <style>
-    :root {
-      --paper: #F4F5F1;
-      --paper-2: #EBEDE6;
-      --ink: #16241F;
-      --ink-soft: #425049;
-      --pine: #0F5C4F;
-      --pine-deep: #0A3D34;
-      --marigold: #E1A339;
-      --vital: #C1432E;
-      --line: #D3D6CC;
-      --white: #FFFFFF;
-    } -->
-
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 </head>
 
@@ -153,6 +141,389 @@
     </div>
   </section>
 
+  <section id="phase2">
+    <div class="wrap">
+      <div class="eyebrow">Expansion · 2024 – 2025</div>
+      <h2>KHDC Nepal — Phase II, live map</h2>
+      <p>Real locations of our Phase II screening operations across Jhapa and Panchthar districts. Click a marker to see
+        that area's totals — ward-level breakdowns are in the table further down the page.</p>
+
+      <div id="p2-map"></div>
+
+      <div class="p2-cards" id="p2-cards">
+        <div class="p2-card" data-region="damak">
+          <div class="region">Damak</div>
+          <div class="figs">
+            <div class="fig">
+              <div class="n">14,338</div>
+              <div class="l">Screened</div>
+            </div>
+            <div class="fig">
+              <div class="n">14,035</div>
+              <div class="l">High-risk</div>
+            </div>
+          </div>
+        </div>
+        <div class="p2-card" data-region="mechinagar">
+          <div class="region">Mechinagar</div>
+          <div class="figs">
+            <div class="fig">
+              <div class="n">8,387</div>
+              <div class="l">Screened</div>
+            </div>
+            <div class="fig">
+              <div class="n">7,827</div>
+              <div class="l">High-risk</div>
+            </div>
+          </div>
+        </div>
+        <div class="p2-card" data-region="phungling">
+          <div class="region">Phungling</div>
+          <div class="figs">
+            <div class="fig">
+              <div class="n">10,828</div>
+              <div class="l">Screened</div>
+            </div>
+            <div class="fig">
+              <div class="n">10,171</div>
+              <div class="l">High-risk</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ward-level breakdown toggles -->
+      <button class="p2-toggle" data-target="table-damak">View Damak ward breakdown ▾</button>
+      <div class="p2-table-wrap" id="table-damak">
+        <table class="p2-table">
+          <thead>
+            <tr>
+              <th>Ward</th>
+              <th>Facility</th>
+              <th>Screened</th>
+              <th>High-risk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Damak-9</td>
+              <td>UHC</td>
+              <td class="num">2,342</td>
+              <td class="num">2,308</td>
+            </tr>
+            <tr>
+              <td>Damak-4</td>
+              <td>BHSC</td>
+              <td class="num">1,701</td>
+              <td class="num">1,653</td>
+            </tr>
+            <tr>
+              <td>Damak-1</td>
+              <td>—</td>
+              <td class="num">1,054</td>
+              <td class="num">1,050</td>
+            </tr>
+            <tr>
+              <td>Damak-5</td>
+              <td>BHSC</td>
+              <td class="num">1,983</td>
+              <td class="num">1,945</td>
+            </tr>
+            <tr>
+              <td>Damak-2</td>
+              <td>BHSC</td>
+              <td class="num">1,542</td>
+              <td class="num">1,464</td>
+            </tr>
+            <tr>
+              <td>Damak-8</td>
+              <td>BHSC</td>
+              <td class="num">1,712</td>
+              <td class="num">1,688</td>
+            </tr>
+            <tr>
+              <td>Damak-7</td>
+              <td>BHSC</td>
+              <td class="num">1,227</td>
+              <td class="num">1,196</td>
+            </tr>
+            <tr>
+              <td>Damak-3</td>
+              <td>UHC</td>
+              <td class="num">1,233</td>
+              <td class="num">1,222</td>
+            </tr>
+            <tr>
+              <td>Damak-10</td>
+              <td>—</td>
+              <td class="num">1,544</td>
+              <td class="num">1,509</td>
+            </tr>
+            <tr>
+              <td>Damak-6</td>
+              <td>—</td>
+              <td class="pending">—</td>
+              <td class="pending">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button class="p2-toggle" data-target="table-mechinagar">View Mechinagar ward breakdown ▾</button>
+      <div class="p2-table-wrap" id="table-mechinagar">
+        <table class="p2-table">
+          <thead>
+            <tr>
+              <th>Ward</th>
+              <th>Screened</th>
+              <th>High-risk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mechinagar-11</td>
+              <td class="pending">1039</td>
+              <td class="pending">1009</td>
+            </tr>
+            <tr>
+              <td>Mechinagar-15</td>
+              <td class="pending">1082</td>
+              <td class="pending">1023</td>
+            </tr>
+            <tr>
+              <td>Mechinagar-14</td>
+              <td class="pending">1291</td>
+              <td class="pending">1147</td>
+            </tr>
+            <tr>
+              <td>Mechinagar-4</td>
+              <td class="pending">1258</td>
+              <td class="pending">1144</td>
+            </tr>
+            <tr>
+              <td>Mechinagar-6</td>
+              <td class="pending">2071</td>
+              <td class="pending">1995</td>
+            </tr>
+            <tr>
+              <td>Mechinagar-8</td>
+              <td class="pending">1646</td>
+              <td class="pending">1509</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button class="p2-toggle" data-target="table-phungling">View Phungling ward breakdown ▾</button>
+      <div class="p2-table-wrap" id="table-phungling">
+        <table class="p2-table">
+          <thead>
+            <tr>
+              <th>Ward</th>
+              <th>Screened</th>
+              <th>High-risk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Phungling-11</td>
+              <td class="pending">431</td>
+              <td class="pending">402</td>
+            </tr>
+            <tr>
+              <td>Phungling-10A</td>
+              <td class="pending">748</td>
+              <td class="pending">709</td>
+            </tr>
+            <tr>
+              <td>Phungling-10B</td>
+              <td class="pending">437</td>
+              <td class="pending">419</td>
+            </tr>
+            <tr>
+              <td>Phungling-09B</td>
+              <td class="pending">1251</td>
+              <td class="pending">1165</td>
+            </tr>
+            <tr>
+              <td>Phungling-09A</td>
+              <td class="pending">467</td>
+              <td class="pending">425</td>
+            </tr>
+            <tr>
+              <td>Phungling-06A</td>
+              <td class="pending">254</td>
+              <td class="pending">239</td>
+            </tr>
+            <tr>
+              <td>Phungling-06B</td>
+              <td class="pending">273</td>
+              <td class="pending">264</td>
+            </tr>
+            <tr>
+              <td>Phungling-05B</td>
+              <td class="pending">160</td>
+              <td class="pending">159</td>
+            </tr>
+            <tr>
+              <td>Phungling-08A</td>
+              <td class="pending">426</td>
+              <td class="pending">423</td>
+            </tr>
+            <tr>
+              <td>Phungling-08B</td>
+              <td class="pending">659</td>
+              <td class="pending">637</td>
+            </tr>
+            <tr>
+              <td>Phungling-03</td>
+              <td class="pending">998</td>
+              <td class="pending">968</td>
+            </tr>
+            <tr>
+              <td>Phungling-01</td>
+              <td class="pending">568</td>
+              <td class="pending">519</td>
+            </tr>
+            <tr>
+              <td>Phungling-06</td>
+              <td class="pending">78</td>
+              <td class="pending">74</td>
+            </tr>
+            <tr>
+              <td>Phungling-02</td>
+              <td class="pending">629</td>
+              <td class="pending">591</td>
+            </tr>
+            <tr>
+              <td>Phungling-04</td>
+              <td class="pending">2170</td>
+              <td class="pending">2063</td>
+            </tr>
+            <tr>
+              <td>Phungling-05</td>
+              <td class="pending">149</td>
+              <td class="pending">137</td>
+            </tr>
+            <tr>
+              <td>Phungling-06</td>
+              <td class="pending">597</td>
+              <td class="pending">525</td>
+            </tr>
+            <tr>
+              <td>Phungling-07</td>
+              <td class="pending">533</td>
+              <td class="pending">452</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      // Real coordinates for each operation area
+      const regions = [
+        {
+          id: 'damak', name: 'Damak', district: 'Jhapa District',
+          lat: 26.6586, lng: 87.7013,
+          screened: 14338, highRisk: 14035, pending: false
+        },
+        {
+          id: 'mechinagar', name: 'Mechinagar', district: 'Jhapa District',
+          lat: 26.6394, lng: 88.1929,
+          screened: 8387, highRisk: 7827, pending: false
+        },
+        {
+          id: 'phungling', name: 'Phungling', district: 'Panchthar District',
+          lat: 27.1567, lng: 87.7167,
+          screened: 10828, highRisk: 10171, pending: false
+        }
+      ];
+
+      // Center the map on the midpoint of all three areas
+      const map = L.map('p2-map', { scrollWheelZoom: false }).setView([26.95, 87.87], 9);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }).addTo(map);
+
+      const markers = {};
+
+      regions.forEach(r => {
+        const icon = L.divIcon({
+          className: '',
+          html: `<div class="p2-marker${r.pending ? ' pending' : ''}"><span>${r.pending ? '?' : '✓'}</span></div>`,
+          iconSize: [34, 34],
+          iconAnchor: [17, 34]
+        });
+
+        const popupHtml = `
+      <div class="p2-popup">
+        <h4>${r.name}</h4>
+        <div class="sub">${r.district}</div>
+        <div class="figs">
+          <div class="fig"><div class="n${r.pending ? ' pending' : ''}">${r.pending ? 'Pending' : r.screened.toLocaleString()}</div><div class="l">Screened</div></div>
+          <div class="fig"><div class="n${r.pending ? ' pending' : ''}">${r.pending ? 'Pending' : r.highRisk.toLocaleString()}</div><div class="l">High-risk</div></div>
+        </div>
+        <a href="#table-${r.id}">View ward breakdown ↓</a>
+      </div>`;
+
+        const marker = L.marker([r.lat, r.lng], { icon }).addTo(map).bindPopup(popupHtml);
+        marker.bindTooltip(r.name, {
+          permanent: true,
+          direction: 'top',
+          offset: [0, -30],
+          className: 'p2-label'
+        });
+        markers[r.id] = marker;
+      });
+      // Clicking a summary card opens that region's map popup
+      document.querySelectorAll('.p2-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const id = card.dataset.region;
+          const r = regions.find(x => x.id === id);
+          map.flyTo([r.lat, r.lng], 12, { duration: 0.8 });
+          markers[id].openPopup();
+        });
+
+      });
+
+      function showTable(tableId) {
+        document.querySelectorAll('.p2-table-wrap').forEach(t => t.classList.remove('show'));
+        const el = document.getElementById(tableId);
+        if (el) {
+          el.classList.add('show');
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      // Manual toggle buttons open/close their table
+      document.querySelectorAll('.p2-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const el = document.getElementById(btn.dataset.target);
+          const isOpen = el.classList.contains('show');
+          document.querySelectorAll('.p2-table-wrap').forEach(t => t.classList.remove('show'));
+          if (!isOpen) { el.classList.add('show'); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+      });
+
+      // Clicking "View ward breakdown" inside a map popup opens the matching table
+      document.getElementById('p2-map').addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="#table-"]');
+        if (!link) return;
+        e.preventDefault();
+        showTable(link.getAttribute('href').slice(1));
+      });
+    })();
+  </script>
+
+
   <section id="mission">
     <div class="wrap">
       <div class="section-head">
@@ -207,8 +578,7 @@
   <section id="founder" class="founder">
     <div class="wrap founder-grid">
       <div>
-        <img class="founder-photo" src="images/prof-dr-sanjib-kumar-sharma.jpg"
-          alt="Prof. Dr. Sanjib Kumar Sharma">
+        <img class="founder-photo" src="images/prof-dr-sanjib-kumar-sharma.jpg" alt="Prof. Dr. Sanjib Kumar Sharma">
         <div class="founder-photo-cap">
           <div class="name">Prof. Dr. Sanjib Kumar Sharma</div>
           <div class="role">Founder & Patron</div>
@@ -238,7 +608,8 @@
       <div class="foot-grid">
         <div>
           <div class="brand" style="margin-bottom:14px;">KHDC Nepal</div>
-          <p style="font-size:14px;max-width:36ch; color:rgb(44, 130, 13);">A community program for prevention, early detection and management
+          <p style="font-size:14px;max-width:36ch; color:rgb(44, 130, 13);">A community program for prevention, early
+            detection and management
             of Kidney, Hypertension, Diabetes and Cardiovascular disease in Nepal.</p>
         </div>
         <div>
@@ -265,6 +636,8 @@
         <span>KHDC Nepal</span>
       </div>
     </div>
+    <div class="foot-creator">Created and Published by <a href="https://www.linkedin.com/in/ishan-karki-030955174"
+        target="_blank">Ishan Karki</a></div>
   </footer>
 
 </body>
