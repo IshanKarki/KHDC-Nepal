@@ -598,6 +598,15 @@
       gap: 10px;
     }
 
+    .foot-creator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: monospace;
+      color: white;
+      font-size: 12px;
+    }
+
     /* reduced motion */
     @media (prefers-reduced-motion: no-preference) {
       .pulse-path {
