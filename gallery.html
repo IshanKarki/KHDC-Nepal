@@ -4,83 +4,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Gallery</title>
+    <title>Our Gallery — KHDC Nepal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="gallery.css">
-
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
+
+    <header>
+        <nav class="wrap">
+            <div class="brand">
+                <img src="images/KHDC-logo.png" alt="KHDC Nepal" height="50" width="50"> KHDC Nepal
+            </div>
+            <div class="navlinks">
+                <a href="index.html#about">About</a>
+                <a href="index.html#why">Why KHDC</a>
+                <a href="index.html#mission">Mission</a>
+                <a href="index.html#founder">Founder</a>
+                <a href="gallery.html">Our Gallery</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="navcta">
+                <a href="donate.html" class="btn ghost">Donate</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="g-hero">
+        <div class="wrap">
+            <div class="eyebrow">Field moments · 2003 – present</div>
             <h1>Our Gallery</h1>
-            <div class="synopsis">
-                <p>Capture the moments of shared experiences that defines our work.</p>
-            </div>
+            <p class="lede">Screenings, trainings and community visits from the field — the shared moments behind every
+                number
+                on our reports.</p>
         </div>
+    </section>
 
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="images/1.jpg" alt="Beautiful Sunset">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-date">Jan 15, 2024</div>
-                </div>
+    <section class="g-body">
+        <div class="wrap">
+            <div class="g-filter">
+                <button class="g-chip active" data-filter="all">All</button>
+                <button class="g-chip" data-filter="screening">Screening Camps</button>
+                <button class="g-chip" data-filter="training">Trainings</button>
+                <button class="g-chip" data-filter="community">Community Visits</button>
             </div>
 
-            <div class="gallery-item">
-                <img src="images/2.jpg" alt="Mountain Adventure">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-date">Feb 03, 2024</div>
+            <div class="gallery" id="gallery">
+                <div class="gallery-item big" data-cat="screening">
+                    <img src="images/1.jpg" alt="Community screening camp">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Screening Camp</div>
+                        <div class="gallery-item-date">Jan 15, 2024 · Damak</div>
+                    </div>
                 </div>
+
+                <div class="gallery-item" data-cat="training">
+                    <img src="images/2.jpg" alt="Health worker training session">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Training</div>
+                        <div class="gallery-item-date">Feb 03, 2024</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-cat="community">
+                    <img src="images/3.jpg" alt="Community outreach visit">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Community Visit</div>
+                        <div class="gallery-item-date">Feb 14, 2024</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item tall" data-cat="screening">
+                    <img src="images/4.png" alt="Blood pressure screening">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Screening Camp</div>
+                        <div class="gallery-item-date">Feb 20, 2024 · Mechinagar</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-cat="training">
+                    <img src="images/5.png" alt="Clinical training">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Training</div>
+                        <div class="gallery-item-date">Mar 05, 2024</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-cat="community">
+                    <img src="images/6.png" alt="Community health education">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Community Visit</div>
+                        <div class="gallery-item-date">Mar 12, 2024</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item wide" data-cat="screening">
+                    <img src="images/7.png" alt="Field team at a screening site">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Screening Camp</div>
+                        <div class="gallery-item-date">Mar 18, 2024 · Phungling</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-cat="community">
+                    <img src="images/8.jpg" alt="Community walk">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Community Visit</div>
+                        <div class="gallery-item-date">Mar 25, 2024</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-cat="training">
+                    <img src="images/9.jpeg" alt="Clinical training">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Clinical Training</div>
+                        <div class="gallery-item-date">Jul 12, 2026</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-cat="training">
+                    <img src="images/10.jpeg" alt="Clinical training">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Clinical Training</div>
+                        <div class="gallery-item-date">Jul 12, 2026</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-cat="training">
+                    <img src="images/11.jpeg" alt="Clinical training">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Clinical Training</div>
+                        <div class="gallery-item-date">Jul 12, 2026</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-cat="training">
+                    <img src="images/12.jpeg" alt="Clinical training">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-tag">Clinical Training</div>
+                        <div class="gallery-item-date">Jul 12, 2026</div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="gallery-item">
-                <img src="images/3.jpg" alt="Family Time">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-date">Feb 14, 2024</div>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/4.png" alt="Night Lights">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-date">Feb 20, 2024</div>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/5.png" alt="Beach Days">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-date">Mar 05, 2024</div>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/6.png" alt="Ocean Waves">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-date">Mar 12, 2024</div>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/7.png" alt="City Exploration">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-date">Mar 18, 2024</div>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/8.jpg" alt="Forest Walk">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-date">Mar 25, 2024</div>
-                </div>
-            </div>
+            <!-- <div class="controls">
+                <button class="btn ghost" id="loadMoreBtn">Load More</button>
+                <a href="#" class="btn" id="viewAllBtn">View All</a>
+            </div> -->
         </div>
+    </section>
 
-        <div class="controls">
-            <button class="btn">Load More</button>
-            <button class="btn">View All</button>
-        </div>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img id="lightboxImg" src="" alt="">
+        <div class="lightbox-cap" id="lightboxCap"></div>
     </div>
+
+    <footer id="contact">
+        <div class="wrap">
+            <div class="foot-grid">
+                <div>
+                    <div class="brand" style="margin-bottom:14px;">KHDC Nepal</div>
+                    <p style="font-size:14px;max-width:36ch;">A community program for prevention, early detection and
+                        management
+                        of Kidney, Hypertension, Diabetes and Cardiovascular disease in Nepal.</p>
+                </div>
+                <div>
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#why">Services / Activity</a></li>
+                        <li><a href="index.html#mission">Our Mission</a></li>
+                        <li><a href="donate.html">Donate Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Reach Us</h5>
+                    <ul>
+                        <li>Dharan-11, Sunsari, Nepal</li>
+                        <li>+977-9810486985</li>
+                        <li>025-579604</li>
+                        <li>contact@khdcnepal.org</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                <span>© 2026 KHDC Nepal. All rights reserved.</span>
+                <span>KHDC Nepal</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            // Filter chips
+            const chips = document.querySelectorAll('.g-chip');
+            const items = document.querySelectorAll('.gallery-item');
+            chips.forEach(chip => {
+                chip.addEventListener('click', () => {
+                    chips.forEach(c => c.classList.remove('active'));
+                    chip.classList.add('active');
+                    const filter = chip.dataset.filter;
+                    items.forEach(item => {
+                        item.style.display = (filter === 'all' || item.dataset.cat === filter) ? '' : 'none';
+                    });
+                });
+            });
+
+            // Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCap = document.getElementById('lightboxCap');
+
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    const tag = item.querySelector('.gallery-item-tag')?.textContent || '';
+                    const date = item.querySelector('.gallery-item-date')?.textContent || '';
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightboxCap.textContent = `${tag} · ${date}`;
+                    lightbox.classList.add('show');
+                });
+            });
+
+            document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('show'));
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('show'); });
+
+            document.getElementById('viewAllBtn').addEventListener('click', (e) => {
+                e.preventDefault();
+                chips.forEach(c => c.classList.remove('active'));
+                document.querySelector('[data-filter="all"]').classList.add('active');
+                items.forEach(item => item.style.display = '');
+            });
+
+            document.getElementById('loadMoreBtn').addEventListener('click', () => {
+                // Placeholder — wire this up once more images/data are added
+                alert('More photos coming soon.');
+            });
+        })();
+    </script>
+
 </body>
 
 </html>
