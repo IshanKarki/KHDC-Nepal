@@ -5,14 +5,14 @@
       "name": "Launch index.html in Edge",
       "type": "msedge",
       "request": "launch",
-      "file": "C:/Users/KHDC Project/Website Codes/index.html"
+      "file": "C:/Users/khdc_/KHDC DATABASE/OneDrive - KHDC Nepal/KHDC Website Codebase/index.html",
     },
     {
       "name": "Attach to Edge",
       "type": "msedge",
       "request": "attach",
       "port": 9222,
-      "webRoot": "C:/Users/KHDC Project/Website Codes"
+      "webRoot": "C:/Users/khdc_/KHDC DATABASE/OneDrive - KHDC Nepal/KHDC Website Codebase"
     }
   ]
 }
