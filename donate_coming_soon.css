@@ -1,0 +1,66 @@
+#donate {
+  max-width: 640px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid #0f766e; /* change to your brand color */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+#donate h2 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+  color: #0f766e;
+}
+
+#donate p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* "Coming soon" line as a badge */
+#donate p:first-of-type {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: #ccfbf1;
+  border-radius: 999px;
+  color: #115e59;
+}
+
+#donate a {
+  color: #0f766e;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+#donate a:hover {
+  color: #134e4a;
+}
+
+/* Bank transfer block, if you enable it later */
+#donate h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+#donate h3 + p {
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  text-align: left;
+}
+
+@media (max-width: 480px) {
+  #donate {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+  #donate h2 {
+    font-size: 1.5rem;
+  }
+}
